@@ -1,0 +1,37 @@
+.navbar{
+    display: flex;
+    gap:.4rem;
+    justify-content: center;
+    
+    align-items: center;
+    background-color: blue;
+    
+}
+.sub{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    gap:2rem;
+    margin-right: 50px;
+    font-size: 20px;
+    
+}
+
+.hello-world-container{
+    margin-right: 10px;
+}
+.hello-world{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 20px;
+    border: 1px solid black;
+    
+    
+}
+
+
+
+
+
