@@ -1,17 +1,30 @@
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-import './App.css'
-import Main from './components/Main'
-import Navbar from './components/Navbar'
 function App() {
-  
+    const [data, setData] = useState([]);
 
-  return (
-    <main>
-      <Navbar />
-      <hr />
-      <Main />
-    </main>
-  )
+    useEffect(() => {
+        axios.get('/api/data')
+            .then(response => {
+                console.log("data",response.data);
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
+
+    return (
+        <div>
+            <h1>API Data:</h1>
+            <ul>
+                <h1>inside ul</h1>
+                {data.map(item => (
+                    <li key={item.id}>{item.name}</li>
+                ))}
+            </ul>
+        </div>
+    );
 }
 
-export default App
+export default App;
